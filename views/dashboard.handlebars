@@ -18,21 +18,22 @@
             </button>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade wholemodal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content modalcss">
                     <form id="newPost-form" action="/api/post" method="POST">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">{{post.name}}</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn closebtn" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="CreatePost">Please fill out all fields</label>
-                                <input type="text" id="postName-input" class="form-control"
-                                    placeholder="Enter name" required />
+                                <input type="text" id="postName-input" class="form-control" placeholder="Enter name"
+                                    required />
                                 <input type="text" id="postDescription-input" class="form-control"
                                     placeholder="Enter a description" required />
                                 <select class="form-select" id="realmSelect">
@@ -126,14 +127,14 @@
     </div>
     {{!---------- CREATED POST SECTION ----------}}
     {{#if posts.length}}
-    <div class="col post-list">
+    <div class="row post-list mb-5">
         <h3>Current Posts:</h3>
         {{!-- creates this section for EACH post linked by post.id --}}
         {{#each posts as |post|}}
         <div class="postsection">
             <div class="card postcardcss">
                 <div class="card-header postcardheader">
-                    <h2>{{post.name}}</h2>
+                    <h2><a class="link" href="/dashboard/edit/{{post.id}}"></a>{{post.name}}</h2>
                 </div>
                 <div class="card-body postcardbody">
                     <ul>
@@ -147,16 +148,19 @@
                     </ul>
                 </div>
                 <div class="postbtnarea">
-                    <button type="button" class="btn btn-primary"><a class="link" href="api/post/{{post.id}}">Edit Post</a></button>
-                </div>
+                    <button type="button" class="btn btn-primary">
+                        <a class="link" href="api/post/{{post.id}}">
+                            Edit Post</a>
+                    </button>
                 </div>
             </div>
-        {{/each}}
         </div>
+        {{/each}}
     </div>
+</div>
 {{!-- if there are no posts this will display --}}
 {{else}}
-<div class="col-md-6 post-list">
+<div class="col-md-6 post-list mb-5">
     <h3>No posts yet</h3>
 </div>
 {{/if}}
@@ -166,30 +170,35 @@
     <h3>Your Characters</h3>
     {{!-- creates this section for EACH post linked by post.id --}}
     {{#each characters as |character|}}
-    <div class="card">
-        <div class="card-header">
-            <h2>
-                <option class="link" value="/dashboard/edit/{{post.id}}">{{post.name}}</option>
-            </h2>
+    <div class="postsection">
+        <div class="card postcardcss">
+            <div class="card-header postcardheader">
+                <h2>
+                    {{!-- <option class="link" value="/dashboard/edit/{{post.id}}">{{post.name}}</option> --}}
+                    <p class="charheaderlink pt-2">{{character.characterName}}</p>
+                </h2>
+            </div>
+            <div class="card-body">
+                <p>Name: {{character.characterName}}</p>
+                <p>Class: {{character.class}}</p>
+                <p>Faction: {{character.faction}}</p>
+                <p>Role: {{character.role}}</p>
+                <p>Realm: {{character.realm}}</p>
+                <p>{{battleTag}}</p>
+            </div>
+            <div class="postbuttonsarea">
+                <input type="hidden" name="character-id" value="{{character.id}}" />
+                <button class="btn" id="del-character-b">Delete</button>
+            </div>
         </div>
-        <div class="card-body">
-            <p>Name: {{character.characterName}}</p>
-            <p>Class: {{character.class}}</p>
-            <p>Faction: {{character.faction}}</p>
-            <p>Role: {{character.role}}</p>
-            <p>Realm: {{character.realm}}</p>
-            <p>{{battleTag}}</p>
-        </div>
-        <input type="hidden" name="character-id" value="{{character.id}}" />
-        <button class="btn" id="del-character-b">Delete</button>
     </div>
     {{/each}}
 
-{{!-- if there are no characters this will display --}}
-{{else}}
-<div class="col-md-6 character-list">
-    <h3>No characters yet</h3>
-</div>
+    {{!-- if there are no characters this will display --}}
+    {{else}}
+    <div class="col-md-6 character-list">
+        <h3>No characters yet</h3>
+    </div>
 </div>
 {{/if}}
 
