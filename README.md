@@ -24,7 +24,7 @@ The purpose of this project was to show we could successfully build an applicati
 
 ### Screenshot
 
-![](https://i.imgur.com/wQWPl6F.png)
+![](https://i.imgur.com/EQJA2zP.png)
 ![](https://i.imgur.com/wQWPl6F.png)
 ![](https://i.imgur.com/8R2owoE.png)
 
