@@ -23,6 +23,10 @@ h2 {
     color: var(--bgcolor2);
 }
 
+.hello {
+    color: var(--bgcolor2);
+}
+
 /* ============ NavBar ============*/
 .navbarcss {
     background-color: var(--bgcolor1) !important;
