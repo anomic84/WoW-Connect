@@ -31,7 +31,7 @@ The purpose of this project was to show we could successfully build an applicati
 ### Links
 
 - Solution URL: (https://github.com/jperalta24/WoW-Connect)
-- Live Site URL:(https://your-live-site-url.com)
+- Live Site URL:(https://ancient-dusk-17399.herokuapp.com/)
 
 ## The process
 
@@ -60,7 +60,7 @@ In the future We would love to have the ability to add character photos and be a
 
 ## Authors
   Jonathan Peralta, Shane Pearson, Johann Kubeja, Spencer Carlson
-- Website - [your name or website url](https://www.your-site.com)
+- Website - [Click here](https://ancient-dusk-17399.herokuapp.com/)
 - GitHub (https://github.com/jperalta24/WoW-Connect)
 
 ## Acknowledgments
