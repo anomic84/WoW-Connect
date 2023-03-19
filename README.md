@@ -16,7 +16,7 @@
 
 ## Overview
 
-Wow connect was built around the idea of community. We wanted to build a platform where you could interact with other players of World of Warcraft. What makes this application stand out is the ability to have a profile where you can design characters, see other players characters, interact with others content, and finally to meet up and play with others on a server. 
+Wow connect was built around the idea of community. We wanted to build a platform where you could interact with other players of World of Warcraft. What makes this application stand out is the ability to have a profile where you can design characters, see other players' characters, interact with others' content, and finally to meet up and play with others on a server. 
 
 ### The challenge
 
